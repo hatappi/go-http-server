@@ -1,0 +1,15 @@
+version: '2'
+
+tasks:
+  run:
+    deps: [build]
+    cmds:
+      - ./dist/app
+
+  build:
+    cmds:
+      - go build -v -o ./dist/app main.go
+    method: checksum
+    sources:
+      - '**/*.go'
+
