@@ -8,12 +8,13 @@ import (
 
 func main() {
 	handler := func(w http.ResponseWriter, _ *http.Request) {
-		log.Println("GET: /")
-		io.WriteString(w, "Hello World!!\n")
+		io.WriteString(w, "HHello World!!!!\n")
 	}
 
 	http.HandleFunc("/", handler)
 
-	log.Println("start http server")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	port := ":8080"
+
+	log.Println("start http server. port is " + port)
+	log.Fatal(http.ListenAndServe(port, nil))
 }
